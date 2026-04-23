@@ -206,6 +206,16 @@ const messages = defineMessages({
     defaultMessage: 'Did you mean',
     description: 'Did you mean alert suggestion',
   },
+  'registration.terms.of.use': {
+    id: 'registration.terms.of.use',
+    defaultMessage: 'Terms of Use',
+    description: 'Link text for the Terms of Use on the registration page',
+  },
+  'registration.keep.me.informed.label': {
+    id: 'registration.keep.me.informed.label',
+    defaultMessage: 'Keep me informed of new promotions and features.',
+    description: 'Label for the optional marketing opt-in checkbox on the registration page',
+  },
 });
 
 export default messages;

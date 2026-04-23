@@ -113,3 +113,19 @@
     border: none;
   }
 }
+
+.registration-finishingx-consent {
+  font-size: 0.875rem;
+
+  // Paragon hides standalone Hyperlink elements inside .layout via a global rule;
+  // this override ensures the ToS and Privacy Policy links remain visible.
+  .pgn__hyperlink {
+    display: inline !important;
+  }
+}
+
+.registration-finishingx-marketing {
+  .pgn__form-label {
+    font-size: 0.875rem;
+  }
+}

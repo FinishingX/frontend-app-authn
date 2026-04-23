@@ -24,7 +24,7 @@ export const defaultState = {
       marketingEmailsOptIn: true,
     },
     formFields: {
-      name: '', email: '', username: '', password: '',
+      name: '', email: '', username: '', password: '', keepMeInformed: false,
     },
     emailSuggestion: {
       suggestion: '', type: '',
