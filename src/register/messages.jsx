@@ -211,6 +211,11 @@ const messages = defineMessages({
     defaultMessage: 'Terms of Use',
     description: 'Link text for the Terms of Use on the registration page',
   },
+  'registration.finishingx.terms.agreement': {
+    id: 'registration.finishingx.terms.agreement',
+    defaultMessage: 'By creating an account, you agree to our {tosLink} and {privacyLink}.',
+    description: 'Consent text shown above the submit button on the registration page',
+  },
   'registration.keep.me.informed.label': {
     id: 'registration.keep.me.informed.label',
     defaultMessage: 'Keep me informed of new promotions and features.',

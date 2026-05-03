@@ -363,9 +363,7 @@ const RegistrationPage = (props) => {
               />
               <div className="registration-finishingx-consent text-muted mt-4">
                 <FormattedMessage
-                  id="registration.finishingx.terms.agreement"
-                  defaultMessage="By creating an account, you agree to our {tosLink} and {privacyLink}."
-                  description="Consent text shown above the submit button on the registration page"
+                  {...messages['registration.finishingx.terms.agreement']}
                   values={{
                     tosLink: (
                       <Hyperlink
