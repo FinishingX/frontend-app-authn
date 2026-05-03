@@ -5,8 +5,10 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { getConfig } from '@edx/frontend-platform';
 import { sendPageEvent, sendTrackEvent } from '@edx/frontend-platform/analytics';
-import { useIntl } from '@edx/frontend-platform/i18n';
-import { Form, Spinner, StatefulButton } from '@openedx/paragon';
+import { FormattedMessage, useIntl } from '@edx/frontend-platform/i18n';
+import {
+  Form, Hyperlink, Spinner, StatefulButton,
+} from '@openedx/paragon';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
@@ -359,6 +361,45 @@ const RegistrationPage = (props) => {
                 autoSubmitRegisterForm={autoSubmitRegForm}
                 fieldDescriptions={fieldDescriptions}
               />
+              <div className="registration-finishingx-consent text-muted mt-4">
+                <FormattedMessage
+                  id="registration.finishingx.terms.agreement"
+                  defaultMessage="By creating an account, you agree to our {tosLink} and {privacyLink}."
+                  description="Consent text shown above the submit button on the registration page"
+                  values={{
+                    tosLink: (
+                      <Hyperlink
+                        className="inline-link"
+                        destination="https://finishingx.de/tos"
+                        target="_blank"
+                        showLaunchIcon={false}
+                      >
+                        {formatMessage(messages['registration.terms.of.use'])}
+                      </Hyperlink>
+                    ),
+                    privacyLink: (
+                      <Hyperlink
+                        className="inline-link"
+                        destination="https://finishingx.de/privacy"
+                        target="_blank"
+                        showLaunchIcon={false}
+                      >
+                        {formatMessage(messages['privacy.policy'])}
+                      </Hyperlink>
+                    ),
+                  }}
+                />
+              </div>
+              <Form.Checkbox
+                className="form-field--checkbox registration-finishingx-marketing mt-2"
+                id="keepMeInformed"
+                checked={formFields.keepMeInformed}
+                name="keepMeInformed"
+                value={formFields.keepMeInformed}
+                onChange={handleOnChange}
+              >
+                {formatMessage(messages['registration.keep.me.informed.label'])}
+              </Form.Checkbox>
               <StatefulButton
                 id="register-user"
                 name="register-user"
