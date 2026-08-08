@@ -1,3 +1,18 @@
 .login-button-width {
     min-width: 6rem;
 }
+
+// Hide the "Register" tab and any register form content on the
+// Logistration shell (used by both /login and /register).
+// The Register tab renders as an <a data-rb-event-key="/register"> inside
+// the react-bootstrap Tabs component (id="controlled-tab" in Logistration.jsx).
+#controlled-tab-tab-\/register,
+[data-rb-event-key="/register"] {
+    display: none !important;
+}
+
+// Belt-and-suspenders: hide the registration form itself, in case it is
+// ever rendered on this page (e.g. RegistrationPage.jsx's <Form id="registration-form">).
+#registration-form {
+    display: none !important;
+}
